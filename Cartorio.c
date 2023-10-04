@@ -125,14 +125,27 @@ int deletar()
 
 int main() 
     {
+    	
 	  int opcao=0; // definindo opções
 	  int x=1;
+	  char senhadigitada[10]="a";
+	  int comparacao;
+	  
+	  printf("### Cartório da EBAC ###\n\n");
+	  printf("Login de Administrador!\n\nDigite a sua senha: ");
+	  scanf("%s",senhadigitada);
+	  
+	  comparacao = strcmp(senhadigitada, "admin");
+	  
+	  if(comparacao == 0)
+	  {
+	  	system("cls");
+	    for(x=1;x=1;)
+	  {
+		
+	    system("cls"); // Responsavel por limpar a tela 
 	
-	  for(x=1;x=1;)
-	{
-	  system("cls"); // Responsavel por limpar a tela 
-	
-	setlocale(LC_ALL,"Portuguese"); // definindo linguagem
+	    setlocale(LC_ALL,"Portuguese"); // definindo linguagem
 	
         printf("### Cartório da EBAC ###\n\n"); // inico do menu
 	    printf("Escolha a opção desejada do menu:\n\n");
@@ -148,7 +161,7 @@ int main()
 	
 	
 	    switch(opcao) // inico de seleção de funções
-    {
+      {
 	    	
 	    case 1:
 	    registro(); // Chamada de funções
@@ -173,9 +186,12 @@ int main()
 		break;
 			
 		
-    }
-
-	
-}	  
+    } // fim da seleção
+   }	
+ }
+ 
+  else
+  printf("Senha incorreta!");
+		  
 }
 
